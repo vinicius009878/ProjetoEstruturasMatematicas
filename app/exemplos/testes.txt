@@ -1,0 +1,11 @@
+Funções para se testar no código main.py
+Exemplo 1:
+f(x) = x² −5x + 6
+f(-1) = (-1)² -5(-1) + 6
+
+Exemplo 2:
+f(x) = x² − 4x + 3
+f(-2) = (-2)² - 4(-2) + 3
+
+Ainda em desenvolvimento...
+'-'

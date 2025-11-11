@@ -1,1 +1,8 @@
-# Aqui serão listadas as dependências do projeto 
+#Aqui serão listadas as dependências do projeto e suas respectivas versões.
+#Crie um ambiente virtual e instale as dependências usando o comandos que estão no README.md
+# No tópico 📦 Configuração
+# Dependências do projeto compatíveis com Python 3.12
+
+numpy == 1.26.4
+matplotlib == 3.8.4
+sympy == 1.12

@@ -7,5 +7,14 @@ Exemplo 2:
 f(x) = x² − 4x + 3
 f(-2) = (-2)² - 4(-2) + 3
 
+Exemplo 3:
+f(x) = 2x² −4x −6
+f(0) = 2(0)² -4(0) + 3
+
+
+Exemplo 4:
+
+Exemplo 5:
+
 Ainda em desenvolvimento...
 '-'

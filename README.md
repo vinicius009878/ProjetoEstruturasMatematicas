@@ -3,34 +3,39 @@
 **📘 Resumo do Projeto**
 
 <p>
-O Projeto Estruturas Matemáticas tem como objetivo desenvolver uma aplicação voltada ao estudo, implementação e manipulação de estruturas matemáticas, abrangendo calculo de funções de primeiro e segundo grau, derivadas e representações visuais. O projeto busca oferecer uma base prática para a compreensão de conceitos matemáticos por meio de recursos computacionais, facilitando o aprendizado e a aplicação de diferentes estruturas em ambientes de programação.
+O Projeto Estruturas Matemáticas tem como propósito desenvolver uma aplicação voltada ao estudo, implementação e manipulação de diferentes estruturas matemáticas. A ferramenta abrange o cálculo de funções de primeiro e segundo grau, derivadas e representações visuais. O projeto busca proporcionar uma experiência prática e intuitiva para a compreensão de conceitos matemáticos, utilizando recursos computacionais que facilitam o aprendizado e a aplicação desses conhecimentos em contextos de programação.
 </p>
 
 # 🚀 Tecnologias Utilizadas
-
+🔧 Pré-requisitos
 Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
-- Python 3.13
+- Python 3.12
 - numpy
 - syspy
 - matplotlib
 
-# 📦 Instalação e Configuração
+# 📦 Configuração
 
-🔧 Pré-requisitos
+Crie um ambiente virtual e instale as dependências, siga os passos a baixo:
 
-1 - Crie um ambiente virtual(venv) e instale as dependências, siga os passos a baixo:
+1 - Crie um ambiente virtual(venv) 
 ```git
-python -m venv "nome_da_venv
+python -m venv .venv
 ```
 2 - Ative sua venv utilizando
 ```git
-cd "nome_da_venv"/scripts/activate
+.\.venv\Scripts\Activate 
 ```
 3 - instale as depêndencias do projeto na sua venv
 ```git
 pip install -r requirements.txt
 ```
+4 - (Opcional) caso o seu pip esteja desatualizado utilize
+```git 
+python.exe -m pip install --upgrade pip
+```
+
 # 🔗 Clone o repositório
 
 ```git

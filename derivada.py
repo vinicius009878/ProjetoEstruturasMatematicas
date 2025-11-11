@@ -2,21 +2,30 @@ import sympy as sp
 
 x = sp.symbols('x')
 
-print("Escolha o tipo de função:")
-print("1 - Função de 1º grau (ax + b)")
-print("2 - Função de 2º grau (ax² + bx + c)")
-tipo = int(input("Opção: "))
+while True:
+    print("=== Derivada de Funções Polinomiais ===")
+    print("Você pode escolher o número de termos da função, e os coeficientes e expoentes de cada termo.")
+    print("0 - Sair")
+    op = input("Digite qualquer tecla para continuar ou 0 para sair: ")
 
-if tipo == 1:
-    a = float(input("a = "))
-    b = float(input("b = "))
-    f = a*x + b
+    if op == "0":
+        print("Encerrando...")
+        break
 
-elif tipo == 2:
-    a = float(input("a = "))
-    b = float(input("b = "))
-    c = float(input("c = "))
-    f = a*x**2 + b*x + c
+    termos = int(input("Quantos termos sua função terá? "))
 
-derivada = sp.diff(f, x)
-print("Derivada:", derivada)
+    f = 0
+    for i in range(1, termos+1):
+        print(f"\nTermo {i}:")
+        a = float(input("Coeficiente (a): "))
+        e = int(input("Expoente de x (ex: 1, 2, 3...): "))
+        f += a * x**e
+
+    print("\nFunção montada:")
+    print(f"f(x) = {f}")
+
+    derivada = sp.diff(f, x)
+    print("\nDerivada:")
+    print("f'(x) =", derivada)
+
+    input("\nPressione ENTER para fazer outra derivada...")

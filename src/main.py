@@ -1,12 +1,12 @@
 # Imports de funções
-from funcoes.calculofuncao1 import funcao_primeiro_grau
-from funcoes.calculofuncao2 import equacao_segundo_grau
-from funcoes.graficoisolado1_didatico import gerar_grafico_primeiro_grau_didatico
-from funcoes.graficoisolado1 import gerar_grafico_primeiro_grau
-from funcoes.graficoisolado2 import gerar_grafico_segundo_grau
-from funcoes.graficoisolado2_didatico import gerar_grafico_segundo_grau_didatico
-from funcoes.calculoderivada import calcular_derivada
-from funcoes.calculovertice import calcular_xv_yv
+from funcoes.funcao_primeiro_grau import funcao_primeiro_grau
+from funcoes.funcao_segundo_grau import equacao_segundo_grau
+from funcoes.grafico_primeiro_grau_didatico import gerar_grafico_primeiro_grau_didatico
+from funcoes.grafico_primeiro_grau import gerar_grafico_primeiro_grau
+from funcoes.grafico_segundo_grau import gerar_grafico_segundo_grau
+from funcoes.grafico_segundo_grau_didatico import gerar_grafico_segundo_grau_didatico
+from funcoes.derivada import calcular_derivada
+from funcoes.vertice import calcular_xv_yv
 
 
 # Def da função do menu interativo

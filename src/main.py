@@ -1,69 +1,109 @@
-from funcoes.funcaografico1 import funcao_primeiro_grau
-from funcoes.funcaografico2 import equacao_segundo_grau
-from funcoes.x_y_vertice import calcular_vertice
+# main.py
 
-from time import sleep
-import os
+# === IMPORTAÇÕES DAS FUNÇÕES ===
+from funcoes.calculofuncao1 import funcao_primeiro_grau
+from funcoes.calculofuncao2 import equacao_segundo_grau
+from funcoes.calculoderivada import calcular_derivada
+from funcoes.calculovertice import calcular_xv_yv
+from funcoes.graficoisolado1 import gerar_grafico_primeiro_grau
+from funcoes.graficoisolado2 import gerar_grafico_segundo_grau
 
 
-def limpar_tela():
-    os.system("cls" if os.name == "nt" else "clear")
+# ============================================
+# ===============     MENU     ===============
+# ============================================
 
 
 def menu():
     while True:
-        limpar_tela()
-        print(
-            """
-    === MENU PRINCIPAL ===
+        print("\n=======================================")
+        print("          SISTEMA DE CÁLCULOS          ")
+        print("=======================================")
+        print("1 - Função de 1º grau (explicada)")
+        print("2 - Função de 2º grau (explicada)")
+        print("3 - Gerar Gráfico - 1º Grau")
+        print("4 - Gerar Gráfico - 2º Grau")
+        print("5 - Calcular Derivada")
+        print("6 - Calcular Vértice (Xv e Yv)")
+        print("0 - Sair")
+        print("=======================================")
 
-    1 - Função de 1º Grau (com gráfico)
-    2 - Função de 2º Grau (com gráfico)
-    3 - Calcular Xv e Yv
-    0 - Sair
-        """
-        )
+        opc = input("Escolha uma opção: ")
 
-        try:
-            escolha = int(input("Digite sua escolha: "))
-        except ValueError:
-            print("⚠ Entrada inválida. Digite apenas números.")
-            sleep(1.5)
-            continue
+        # ----------------------------------------
+        # 1 - Função de 1º grau
+        # ----------------------------------------
+        if opc == "1":
+            print("\n--- Função de 1º grau: ax + b ---")
+            a = float(input("Digite o valor de a: "))
+            b = float(input("Digite o valor de b: "))
+            funcao_primeiro_grau(a, b)
 
-        match escolha:
-            case 1:
-                limpar_tela()
-                print("--- Função de 1º Grau ---\n")
-                a = float(input("Digite o valor de a: "))
-                b = float(input("Digite o valor de b: "))
-                funcao_primeiro_grau(a, b)
-                input("\nPressione Enter para voltar ao menu...")
+        # ----------------------------------------
+        # 2 - Função de 2º grau
+        # ----------------------------------------
+        elif opc == "2":
+            print("\n--- Função de 2º grau: ax² + bx + c ---")
+            a = float(input("Digite o valor de a: "))
+            b = float(input("Digite o valor de b: "))
+            c = float(input("Digite o valor de c: "))
+            equacao_segundo_grau(a, b, c)
 
-            case 2:
-                limpar_tela()
-                print("--- Função de 2º Grau ---\n")
-                a = float(input("Digite o valor de a: "))
-                b = float(input("Digite o valor de b: "))
-                c = float(input("Digite o valor de c: "))
-                equacao_segundo_grau(a, b, c)
-                input("\nPressione Enter para voltar ao menu...")
+        # ----------------------------------------
+        # 3 - Gráfico 1º Grau
+        # ----------------------------------------
+        elif opc == "3":
+            print("\n--- Gráfico da Função de 1º Grau ---")
+            a = float(input("Digite o valor de a: "))
+            b = float(input("Digite o valor de b: "))
+            gerar_grafico_primeiro_grau(a, b)
 
-            case 3:
-                limpar_tela()
-                print("--- Calcular Xv e Yv ---\n")
-                calcular_vertice()
-                input("\nPressione Enter para voltar ao menu...")
+        # ----------------------------------------
+        # 4 - Gráfico 2º Grau
+        # ----------------------------------------
+        elif opc == "4":
+            print("\n--- Gráfico da Função de 2º Grau ---")
+            a = float(input("Digite o valor de a: "))
+            b = float(input("Digite o valor de b: "))
+            c = float(input("Digite o valor de c: "))
+            gerar_grafico_segundo_grau(a, b, c)
 
-            case 0:
-                print("Finalizando programa...")
-                sleep(1)
-                break
+        # ----------------------------------------
+        # 5 - Derivada
+        # ----------------------------------------
+        elif opc == "5":
+            print("\n--- Derivada de ax^n + bx^m + c ---")
+            a = float(input("Digite o valor de a: "))
+            exp_a = float(input("Digite o expoente do termo a: "))
+            b = float(input("Digite o valor de b: "))
+            exp_b = float(input("Digite o expoente do termo b: "))
+            c = float(input("Digite o valor de c: "))
+            calcular_derivada(a, exp_a, b, exp_b, c)
 
-            case _:
-                print("⚠ Opção inválida! Tente novamente.")
-                sleep(1.5)
+        # ----------------------------------------
+        # 6 - Vértice
+        # ----------------------------------------
+        elif opc == "6":
+            print("\n--- Vértice da parábola ax² + bx + c ---")
+            a = float(input("Digite o valor de a: "))
+            b = float(input("Digite o valor de b: "))
+            c = float(input("Digite o valor de c: "))
+            calcular_xv_yv(a, b, c)
 
+        # ----------------------------------------
+        # 0 - SAIR
+        # ----------------------------------------
+        elif opc == "0":
+            print("Encerrando o programa...")
+            break
+
+        else:
+            print("\nOpção inválida! Tente novamente.")
+
+
+# ============================================
+# ===============   EXECUÇÃO   ===============
+# ============================================
 
 if __name__ == "__main__":
     menu()

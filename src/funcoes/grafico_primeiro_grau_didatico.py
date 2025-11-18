@@ -1,9 +1,9 @@
-# funcoes/graficoisolado1_didatico.py
-
+# Importações necessárias das bibliotecas
 import numpy as np
 import matplotlib.pyplot as plt
 
 
+# Função para gerar o gráfico didático da função de 1º grau
 def gerar_grafico_primeiro_grau_didatico(a, b):
     print("\n==============================================")
     print("===  GERADOR DIDÁTICO DO GRÁFICO DE 1º GRAU ===")
@@ -25,13 +25,13 @@ def gerar_grafico_primeiro_grau_didatico(a, b):
     print("\n➡ O coeficiente 'b' indica o ponto onde a reta toca o eixo Y.")
     print(f"   • Intercepto em Y = {b}\n")
 
-    # Intercepto
+    # Interceptação com o eixo Y
     y_intercept = b
     print("=== Passo 1: Intercepto no eixo Y ===")
     print(f"f(0) = {b}")
     print(f"Intercepto: (0, {y_intercept})\n")
 
-    # Raiz
+    # Raiz da função
     print("=== Passo 2: Raiz da função ===")
     if a == 0:
         print("Como a = 0, a função é constante e não possui raiz (exceto se b = 0).")
@@ -41,24 +41,24 @@ def gerar_grafico_primeiro_grau_didatico(a, b):
         print(f"0 = {a}x + {b}")
         print(f"Raiz encontrada: ({raiz:.2f}, 0)\n")
 
-    # Pontos auxiliares
+    # Pontos auxiliares da função
     print("=== Passo 3: Pontos auxiliares ===")
     x1, x2 = -1, 1
     p1, p2 = a * x1 + b, a * x2 + b
     print(f"f(-1) = {p1}")
     print(f"f(1)  = {p2}\n")
 
-    # Gráfico
+    # Gráfico da função
     x = np.linspace(-10, 10, 200)
     y = a * x + b
 
     plt.plot(x, y, label=f"f(x) = {a}x + {b}", color="black")
 
-    # Intercepto
+    # Interceptação com o eixo Y (Ponto)
     plt.scatter(0, y_intercept, color="green", label=f"Intercepto (0, {y_intercept})")
     plt.text(0, y_intercept, f" (0, {y_intercept:.2f})", color="green")
 
-    # Raiz
+    # Raiz (Ponto)
     if raiz is not None:
         plt.scatter(raiz, 0, color="red", label=f"Raiz ({raiz:.2f}, 0)")
         plt.text(raiz, 0, f" ({raiz:.2f}, 0)", color="red")

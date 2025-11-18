@@ -1,3 +1,4 @@
+# Função para calcular o vértice da função de 2º grau
 def calcular_xv_yv(a, b, c):
     print("\n=== Cálculo Didático do Vértice da Função de 2º Grau ===")
     print("Forma geral: f(x) = ax² + bx + c\n")
@@ -10,9 +11,7 @@ def calcular_xv_yv(a, b, c):
     print("=== Passo 1: Confirmar função quadrática ===")
     print("Como a ≠ 0, trata-se de uma função do 2º grau.\n")
 
-    # -------------------------
-    # CÁLCULO DO Xv
-    # -------------------------
+    # Cálculo Do Xv
     print("=== Passo 2: Calcular o X do vértice ===")
     print("Fórmula:  Xv = -b / (2a)")
     print(f"Substituindo: Xv = -({b}) / (2 * {a})")
@@ -21,9 +20,7 @@ def calcular_xv_yv(a, b, c):
 
     print(f"Xv = {xv:.4f}\n")
 
-    # -------------------------
-    # CÁLCULO DO Yv
-    # -------------------------
+    # Cálculo Do Yv
     print("=== Passo 3: Calcular o Y do vértice ===")
     print("Fórmula:  Yv = a·Xv² + b·Xv + c")
     print(f"Substituindo: Yv = {a} * ({xv}²) + {b} * ({xv}) + {c}")
@@ -32,9 +29,7 @@ def calcular_xv_yv(a, b, c):
 
     print(f"Yv = {yv:.4f}\n")
 
-    # -------------------------
-    # RESULTADO FINAL
-    # -------------------------
+    # Resultado Final
     print("=== Resultado Final ===")
     print(f"Vértice da parábola:  ({xv:.4f}, {yv:.4f})")
 

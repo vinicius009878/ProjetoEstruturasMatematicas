@@ -1,3 +1,4 @@
+# Importações das libs
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -8,9 +9,7 @@ def gerar_grafico_segundo_grau_didatico(a, b, c):
     )
     print(f"Função: f(x) = {a}x² + {b}x + {c}\n")
 
-    # -------------------------------------------------------
-    # 1 — Identificar os coeficientes
-    # -------------------------------------------------------
+    # 1 — Identificação dos coeficientes
     print("1️⃣  Identificando os coeficientes:")
     print(f"a = {a}")
     print(f"b = {b}")
@@ -22,9 +21,7 @@ def gerar_grafico_segundo_grau_didatico(a, b, c):
 
     print("\nComo a ≠ 0 → É uma FUNÇÃO QUADRÁTICA!\n")
 
-    # -------------------------------------------------------
     # 2 — Calcular o Delta
-    # -------------------------------------------------------
     print("2️⃣  Calculando o discriminante (Δ):")
     print("Fórmula: Δ = b² − 4ac")
     delta = b**2 - 4 * a * c
@@ -32,9 +29,7 @@ def gerar_grafico_segundo_grau_didatico(a, b, c):
     print(f"Δ = ({b})² − 4 * {a} * {c}")
     print(f"Δ = {delta:.2f}\n")
 
-    # -------------------------------------------------------
-    # 3 — Determinar as raízes
-    # -------------------------------------------------------
+    # 3 — Determinando as raízes
     print("3️⃣  Encontrando as raízes:")
 
     raizes = []
@@ -55,9 +50,7 @@ def gerar_grafico_segundo_grau_didatico(a, b, c):
 
     print()
 
-    # -------------------------------------------------------
-    # 4 — Vértice
-    # -------------------------------------------------------
+    # 4 — Vértice da parábola
     print("4️⃣  Calculando o vértice (Xv e Yv):")
     xv = -b / (2 * a)
     yv = a * xv**2 + b * xv + c
@@ -69,15 +62,11 @@ def gerar_grafico_segundo_grau_didatico(a, b, c):
     else:
         print("\nA parábola é 🔻 ABERTA PARA BAIXO 🔻 (a < 0).")
 
-    # -------------------------------------------------------
-    # 5 — Intercepto no eixo Y
-    # -------------------------------------------------------
+    # 5 — Interceptação no eixo Y
     print("\n5️⃣  Intercepto no eixo Y:")
     print(f"Quando x = 0 → f(0) = {c}\n")
 
-    # -------------------------------------------------------
     # 6 — Pontos auxiliares
-    # -------------------------------------------------------
     print("6️⃣  Calculando dois pontos auxiliares:")
     x1, x2 = -2, 2
     p1 = a * x1**2 + b * x1 + c
@@ -87,18 +76,16 @@ def gerar_grafico_segundo_grau_didatico(a, b, c):
 
     print("Gerando gráfico...\n")
 
-    # -------------------------------------------------------
-    # 7 — GRÁFICO
-    # -------------------------------------------------------
+    # 7 — Geração do Gráfico
     X = np.linspace(-10, 10, 400)
     Y = a * X**2 + b * X + c
 
     plt.figure(figsize=(10, 6))
 
-    # Curva principal
+    # Curva principal da função
     plt.plot(X, Y, color="black", label="Função Quadrática")
 
-    # Vértice
+    # Vértice da parábola
     plt.scatter(xv, yv, color="purple", s=70, label=f"Vértice ({xv:.2f}, {yv:.2f})")
     plt.text(xv, yv, f" ({xv:.2f}, {yv:.2f})", color="purple")
 
@@ -110,7 +97,7 @@ def gerar_grafico_segundo_grau_didatico(a, b, c):
         for r in raizes:
             plt.text(r, 0, f" ({r:.2f}, 0)", color="red")
 
-    # Intercepto em Y
+    # Interceptação em Y
     plt.scatter(0, c, color="green", s=70, label=f"Intercepto em Y (0, {c})")
     plt.text(0, c, f" (0, {c})", color="green")
 

@@ -1,16 +1,18 @@
+# Imports de bibliotecas
 import numpy as np
 import matplotlib.pyplot as plt
 
 
+# Função para gerar o gráfico da função de 2º grau
 def gerar_grafico_segundo_grau(a, b, c):
     x = np.linspace(-10, 10, 300)
     y = a * x**2 + b * x + c
 
-    # ------- Cálculo do vértice -------
+    # Cálculo do vértice
     xv = -b / (2 * a)
     yv = a * xv**2 + b * xv + c
 
-    # ------- Raízes -------
+    # Cálculo das Raízes
     delta = b**2 - 4 * a * c
     raizes = []
     if delta > 0:
@@ -21,29 +23,27 @@ def gerar_grafico_segundo_grau(a, b, c):
         r = -b / (2 * a)
         raizes = [r]
 
-    # ------- Intercepto no eixo Y -------
+    # Interceptação no eixo Y
     intercepto_y = c
 
-    # ------- Pontos auxiliares -------
+    # Pontos auxiliares
     x1, x2 = -2, 2
     p1 = a * x1**2 + b * x1 + c
     p2 = a * x2**2 + b * x2 + c
 
-    # ---------------------------------------
-    #              GRÁFICO
-    # ---------------------------------------
+    # Geração do gráfico
     plt.plot(x, y, label=f"f(x) = {a}x² + {b}x + {c}", color="black")
 
-    # Vértice
+    # Vértice Ponto
     plt.scatter(xv, yv, color="purple", s=70, label=f"Vértice ({xv:.2f}, {yv:.2f})")
     plt.text(xv, yv, f" ({xv:.2f}, {yv:.2f})", color="purple")
 
-    # Raízes
+    # Raízes Pontos
     for r in raizes:
         plt.scatter(r, 0, color="red", s=60, label=f"Raiz ({r:.2f}, 0)")
         plt.text(r, 0, f" ({r:.2f}, 0)", color="red")
 
-    # Intercepto em Y
+    # Interceptação em Y Ponto
     plt.scatter(
         0, intercepto_y, color="green", s=60, label=f"Intercepto (0, {intercepto_y})"
     )

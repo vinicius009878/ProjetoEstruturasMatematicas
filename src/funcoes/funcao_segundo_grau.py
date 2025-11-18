@@ -3,6 +3,14 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 
+def esperar(mensagem="Pressione Enter para continuar..."):
+    try:
+        input(mensagem)
+    except (KeyboardInterrupt, EOFError):
+        print("\nInterrompido pelo usuário.")
+        raise SystemExit
+
+
 def equacao_segundo_grau(a, b, c):
     print("\n=== Analisador Didático da Função de 2º Grau ===")
     print("Forma geral: f(x) = ax² + bx + c\n")
@@ -11,13 +19,17 @@ def equacao_segundo_grau(a, b, c):
         print("⚠ Isso não é uma função de segundo grau, pois a = 0.")
         return
 
+    # -------------------------
+    # PASSO 1
+    # -------------------------
     print("=== Passo 1: Identificar os coeficientes ===")
     print(f"a = {a}")
     print(f"b = {b}")
     print(f"c = {c}\n")
+    esperar()
 
     # -------------------------
-    # CALCULAR DELTA
+    # DELTA (PASSO 2)
     # -------------------------
     print("=== Passo 2: Calcular o discriminante (Delta) ===")
     print("Usamos a fórmula:  Δ = b² - 4ac\n")
@@ -26,9 +38,10 @@ def equacao_segundo_grau(a, b, c):
     print(f"Δ = ({b})² - 4 * {a} * {c}")
     delta = b**2 - 4 * a * c
     print(f"Δ = {delta:.2f}\n")
+    esperar()
 
     # -------------------------
-    # RAÍZES
+    # RAÍZES (PASSO 3)
     # -------------------------
     print("=== Passo 3: Encontrar as raízes ===")
 
@@ -62,8 +75,10 @@ def equacao_segundo_grau(a, b, c):
         print(f"\nx₁ = {x1:.2f}")
         print(f"x₂ = {x2:.2f}\n")
 
+    esperar()
+
     # -------------------------
-    # VÉRTICE
+    # VÉRTICE (PASSO 4)
     # -------------------------
     print("=== Passo 4: Calcular o vértice (Xv e Yv) ===")
 
@@ -71,7 +86,7 @@ def equacao_segundo_grau(a, b, c):
     print("Xv = -b / (2a)")
     print("Yv = -Δ / (4a)\n")
 
-    print(f"Substituindo:")
+    print("Substituindo:")
     print(f"Xv = -({b}) / (2 * {a})")
     xv = -b / (2 * a)
     print(f"Xv = {xv:.2f}")
@@ -80,28 +95,43 @@ def equacao_segundo_grau(a, b, c):
     yv = -delta / (4 * a)
     print(f"Yv = {yv:.2f}\n")
 
+    esperar()
+
+    # -------------------------
+    # CONCAVIDADE (PASSO 5)
+    # -------------------------
+    print("=== Passo 5: Analisar a concavidade ===")
+
     if a > 0:
         abertura = "A parábola é voltada PARA CIMA (a > 0)."
     else:
         abertura = "A parábola é voltada PARA BAIXO (a < 0)."
 
-    print("=== Passo 5: Analisar a concavidade ===")
     print(abertura + "\n")
+    esperar()
 
     # -------------------------
-    # CALCULAR f(x)
+    # CALCULAR f(x) (PASSO 6)
     # -------------------------
     print("=== Passo 6: Calcular f(x) para um valor escolhido ===")
-    x_input = float(input("Digite um valor para x: "))
+    esperar("Pressione Enter para inserir um valor de x...")
+
+    while True:
+        try:
+            x_input = float(input("Digite um valor para x: "))
+            break
+        except ValueError:
+            print("Entrada inválida. Digite um número válido.")
 
     print("\nUsamos: f(x) = ax² + bx + c")
     print(f"Substituindo: f({x_input}) = {a} * ({x_input}²) + {b} * {x_input} + {c}")
 
     fx = a * (x_input**2) + b * x_input + c
     print(f"Resultado: f({x_input}) = {fx:.2f}\n")
+    esperar()
 
     # -------------------------
-    # GRÁFICO
+    # GRÁFICO (PASSO 7)
     # -------------------------
     print("=== Passo 7: Gerar o gráfico ===")
     print("O gráfico mostrará:")
@@ -109,6 +139,7 @@ def equacao_segundo_grau(a, b, c):
     print("• As raízes (se existirem)")
     print("• O vértice")
     print("• O ponto onde toca o eixo Y (c)\n")
+    esperar()
 
     x = np.linspace(-20, 20, 400)
     y = a * x**2 + b * x + c
@@ -129,7 +160,7 @@ def equacao_segundo_grau(a, b, c):
         plt.scatter(x2, 0, color="red", label=f"Raiz x₂ = {x2:.2f}")
         plt.text(x2, 0, f" ({x2:.2f}, 0)", color="red", fontsize=9)
 
-    # Intercepto em Y (c)
+    # Intercepto em Y
     plt.scatter(0, c, color="green", label=f"Intercepto em Y = {c}")
     plt.text(0, c, f" (0, {c:.2f})", color="green", fontsize=9)
 
@@ -137,12 +168,12 @@ def equacao_segundo_grau(a, b, c):
     plt.scatter(xv, yv, color="purple", label=f"Vértice ({xv:.2f}, {yv:.2f})")
     plt.text(xv, yv, f" ({xv:.2f}, {yv:.2f})", color="purple", fontsize=9)
 
-    # Descrição da concavidade
+    # Concavidade
     plt.scatter([], [], color="blue", label=abertura)
 
     plt.grid(True, linestyle="--", linewidth=0.5)
     plt.xlim(-20, 20)
     plt.ylim(-20, 20)
-
     plt.legend()
+
     plt.show()

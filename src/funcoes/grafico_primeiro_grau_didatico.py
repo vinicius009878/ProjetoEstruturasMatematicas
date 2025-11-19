@@ -3,6 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+def esperar(mensagem="Pressione Enter para continuar..."):
+    try:
+        input(mensagem)
+    except (KeyboardInterrupt, EOFError):
+        print("\nInterrompido pelo usuário.")
+        raise SystemExit
+
+
 # Função para gerar o gráfico didático da função de 1º grau
 def gerar_grafico_primeiro_grau_didatico(a, b):
     print("\n==============================================")
@@ -25,13 +33,21 @@ def gerar_grafico_primeiro_grau_didatico(a, b):
     print("\n➡ O coeficiente 'b' indica o ponto onde a reta toca o eixo Y.")
     print(f"   • Intercepto em Y = {b}\n")
 
-    # Interceptação com o eixo Y
-    y_intercept = b
+    esperar()
+
+    # ------------------------------------------------------------
+    # INTERCEPTO EM Y
+    # ------------------------------------------------------------
     print("=== Passo 1: Intercepto no eixo Y ===")
+    y_intercept = b
     print(f"f(0) = {b}")
     print(f"Intercepto: (0, {y_intercept})\n")
 
-    # Raiz da função
+    esperar()
+
+    # ------------------------------------------------------------
+    # RAIZ DA FUNÇÃO
+    # ------------------------------------------------------------
     print("=== Passo 2: Raiz da função ===")
     if a == 0:
         print("Como a = 0, a função é constante e não possui raiz (exceto se b = 0).")
@@ -41,24 +57,42 @@ def gerar_grafico_primeiro_grau_didatico(a, b):
         print(f"0 = {a}x + {b}")
         print(f"Raiz encontrada: ({raiz:.2f}, 0)\n")
 
-    # Pontos auxiliares da função
+    esperar()
+
+    # ------------------------------------------------------------
+    # PONTOS AUXILIARES
+    # ------------------------------------------------------------
     print("=== Passo 3: Pontos auxiliares ===")
     x1, x2 = -1, 1
     p1, p2 = a * x1 + b, a * x2 + b
     print(f"f(-1) = {p1}")
     print(f"f(1)  = {p2}\n")
 
-    # Gráfico da função
+    esperar()
+
+    # ------------------------------------------------------------
+    # GRÁFICO
+    # ------------------------------------------------------------
+    print("=== Passo 4: Gerar o gráfico ===")
+    print("O gráfico mostrará:")
+    print("• A reta")
+    print("• O intercepto em Y")
+    print("• A raiz (se existir)")
+    print("• Pontos auxiliares (-1 e 1)\n")
+
+    esperar()
+
+    # Construção do gráfico
     x = np.linspace(-10, 10, 200)
     y = a * x + b
 
     plt.plot(x, y, label=f"f(x) = {a}x + {b}", color="black")
 
-    # Interceptação com o eixo Y (Ponto)
+    # Intercepto em Y
     plt.scatter(0, y_intercept, color="green", label=f"Intercepto (0, {y_intercept})")
     plt.text(0, y_intercept, f" (0, {y_intercept:.2f})", color="green")
 
-    # Raiz (Ponto)
+    # Raiz
     if raiz is not None:
         plt.scatter(raiz, 0, color="red", label=f"Raiz ({raiz:.2f}, 0)")
         plt.text(raiz, 0, f" ({raiz:.2f}, 0)", color="red")

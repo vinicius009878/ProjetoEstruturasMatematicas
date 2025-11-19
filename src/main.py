@@ -8,6 +8,9 @@ from funcoes.grafico_segundo_grau_didatico import gerar_grafico_segundo_grau_did
 from funcoes.derivada import calcular_derivada
 from funcoes.vertice import calcular_xv_yv
 
+# Import do banco de questões
+from funcoes.banco_questoes.menu_banco_questoes import menu_banco_questoes
+
 
 # Def da função do menu interativo
 def menu():
@@ -23,6 +26,7 @@ def menu():
         print("6 - Gerar Gráfico - 2º Grau (Simples)")
         print("7 - Calcular Derivada")
         print("8 - Calcular Vértice (Xv e Yv)")
+        print("9 - Banco de Questões")
         print("\n0 - Sair")
         print("=======================================\n")
 
@@ -90,6 +94,11 @@ def menu():
             b = float(input("Digite o valor de b: "))
             c = float(input("Digite o valor de c: "))
             calcular_xv_yv(a, b, c)
+
+        # 9 - Banco de Questões
+        elif opc == "9":
+            print("\n--- Banco de Questões ---")
+            menu_banco_questoes()
 
         # 0 - Sair
         elif opc == "0":

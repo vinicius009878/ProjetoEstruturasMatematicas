@@ -5,10 +5,8 @@ from funcoes.grafico_primeiro_grau_didatico import gerar_grafico_primeiro_grau_d
 from funcoes.grafico_primeiro_grau import gerar_grafico_primeiro_grau
 from funcoes.grafico_segundo_grau import gerar_grafico_segundo_grau
 from funcoes.grafico_segundo_grau_didatico import gerar_grafico_segundo_grau_didatico
-from funcoes.derivada import calcular_derivada
 from funcoes.vertice import calcular_xv_yv
-
-# Import do banco de questões
+from funcoes.menu_derivada import menu_derivadas
 from funcoes.banco_questoes.menu_banco_questoes import menu_banco_questoes
 
 
@@ -24,7 +22,7 @@ def menu():
         print("4️⃣  - Gerar Gráfico - 2º Grau (Didático)")
         print("5️⃣  - Gerar Gráfico - 1º Grau (Simples)")
         print("6️⃣  - Gerar Gráfico - 2º Grau (Simples)")
-        print("7️⃣  - Calcular Derivada")
+        print("7️⃣  - Calcular Derivadas")
         print("8️⃣  - Calcular Vértice (Xv e Yv)")
         print("9️⃣  - Banco de Questões")
         print("\n0️⃣  - Sair")
@@ -89,17 +87,9 @@ def menu():
             c = float(input("✍️  Digite o valor de c: "))
             gerar_grafico_segundo_grau(a, b, c)
 
-        # 7 - Cálculo da Derivada
+        # 7 - MENU DE DERIVADAS (NOVO)
         elif opc == "7":
-            print("\n=======================================")
-            print(" 📐  Derivada de Função Polinomial  📐 ")
-            print("=======================================\n")
-            a = float(input("✍️  Digite o valor de a: "))
-            exp_a = float(input("✍️  Digite o expoente do termo a: "))
-            b = float(input("✍️  Digite o valor de b: "))
-            exp_b = float(input("✍️  Digite o expoente do termo b: "))
-            c = float(input("✍️  Digite o valor de c: "))
-            calcular_derivada(a, exp_a, b, exp_b, c)
+            menu_derivadas()
 
         # 8 - Cálculo do Vértice
         elif opc == "8":

@@ -7,78 +7,78 @@ def esperar(mensagem="Pressione Enter para continuar..."):
     try:
         input(mensagem)
     except (KeyboardInterrupt, EOFError):
-        print("\nInterrompido pelo usuário.")
+        print("\n❌ Interrompido pelo usuário.")
         raise SystemExit
 
 
 # Função para gerar o gráfico didático da função de 1º grau
 def gerar_grafico_primeiro_grau_didatico(a, b):
     print("\n==============================================")
-    print("===  GERADOR DIDÁTICO DO GRÁFICO DE 1º GRAU ===")
+    print(" ⚙️  GERADOR DIDÁTICO DO GRÁFICO DE 1º GRAU ⚙️ ")
     print("==============================================")
-    print("A função de 1º grau tem o formato:")
-    print("       f(x) = ax + b\n")
+    print("🔶 A função de 1º grau tem o formato:")
+    print("🔸 f(x) = ax + b\n")
 
-    print(f"Coeficiente angular (a): {a}")
-    print(f"Coeficiente linear  (b): {b}\n")
+    print(f"💠 Coeficiente angular (a): {a}")
+    print(f"💠 Coeficiente linear  (b): {b}\n")
 
-    print("➡ O coeficiente 'a' indica a inclinação da reta:")
+    print("➡️  O coeficiente 'a' indica a inclinação da reta:")
     if a > 0:
-        print("   • A reta é CRESCENTE (sobe da esquerda para a direita).")
+        print("💠 A reta é CRESCENTE (sobe da esquerda para a direita).")
     elif a < 0:
-        print("   • A reta é DECRESCENTE (desce da esquerda para a direita).")
+        print("💠 A reta é DECRESCENTE (desce da esquerda para a direita).")
     else:
-        print("   • A reta é HORIZONTAL (função constante).")
+        print("💠 A reta é HORIZONTAL (função constante).")
 
-    print("\n➡ O coeficiente 'b' indica o ponto onde a reta toca o eixo Y.")
-    print(f"   • Intercepto em Y = {b}\n")
+    print("\n➡️  O coeficiente 'b' indica o ponto onde a reta toca o eixo Y.")
+    print(f"💠 Intercepto em Y = {b}\n")
 
     esperar()
 
     # ------------------------------------------------------------
     # INTERCEPTO EM Y
     # ------------------------------------------------------------
-    print("=== Passo 1: Intercepto no eixo Y ===")
+    print("=== Passo 1️⃣ : Intercepto no eixo Y ===")
     y_intercept = b
-    print(f"f(0) = {b}")
-    print(f"Intercepto: (0, {y_intercept})\n")
+    print(f"💠 f(0) = {b}")
+    print(f"❇️  Intercepto: (0, {y_intercept})\n")
 
     esperar()
 
     # ------------------------------------------------------------
     # RAIZ DA FUNÇÃO
     # ------------------------------------------------------------
-    print("=== Passo 2: Raiz da função ===")
+    print("=== Passo 2️⃣ : Raiz da função ===")
     if a == 0:
-        print("Como a = 0, a função é constante e não possui raiz (exceto se b = 0).")
+        print("‼️  Como a = 0, a função é constante e não possui raiz (exceto se b = 0).")
         raiz = None
     else:
         raiz = -b / a
-        print(f"0 = {a}x + {b}")
-        print(f"Raiz encontrada: ({raiz:.2f}, 0)\n")
+        print(f"💠 0 = {a}x + {b}")
+        print(f"❇️  Raiz encontrada: ({raiz:.2f}, 0)\n")
 
     esperar()
 
     # ------------------------------------------------------------
     # PONTOS AUXILIARES
     # ------------------------------------------------------------
-    print("=== Passo 3: Pontos auxiliares ===")
+    print("=== Passo 3️⃣ : Pontos auxiliares ===")
     x1, x2 = -1, 1
     p1, p2 = a * x1 + b, a * x2 + b
-    print(f"f(-1) = {p1}")
-    print(f"f(1)  = {p2}\n")
+    print(f"💠 f(-1) = {p1}")
+    print(f"💠 f(1)  = {p2}\n")
 
     esperar()
 
     # ------------------------------------------------------------
     # GRÁFICO
     # ------------------------------------------------------------
-    print("=== Passo 4: Gerar o gráfico ===")
-    print("O gráfico mostrará:")
-    print("• A reta")
-    print("• O intercepto em Y")
-    print("• A raiz (se existir)")
-    print("• Pontos auxiliares (-1 e 1)\n")
+    print("=== Passo 4️⃣ : Gerar o gráfico ===")
+    print("📈 O gráfico mostrará:")
+    print("💠 A reta")
+    print("💠 O intercepto em Y")
+    print("💠 A raiz (se existir)")
+    print("💠 Pontos auxiliares (-1 e 1)\n")
 
     esperar()
 

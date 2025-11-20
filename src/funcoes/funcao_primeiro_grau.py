@@ -6,79 +6,79 @@ def esperar(mensagem="Pressione Enter para continuar..."):
     try:
         input(mensagem)
     except (KeyboardInterrupt, EOFError):
-        print("\nInterrompido pelo usuário.")
+        print("\n❌ Interrompido pelo usuário.")
         raise SystemExit
 
 
 def funcao_primeiro_grau(a, b):
-    print("\n=== Analisador Didático da Função de 1º Grau ===")
-    print("Forma geral: f(x) = ax + b\n")
+    print("\n=== 📝 Analisador Didático da Função de 1º Grau 📝 ===")
+    print("🔶 Forma geral: f(x) = ax + b\n")
 
     if a == 0:
-        print("⚠ Isso não é uma função de primeiro grau, pois a = 0.")
+        print("⚠️ Isso não é uma função de primeiro grau, pois a = 0.")
         return
 
     # -------------------------
     # PASSO 1
     # -------------------------
-    print("=== Passo 1: Identificar os coeficientes ===")
-    print(f"a = {a}")
-    print(f"b = {b}\n")
+    print("=== Passo 1️⃣ : Identificar os coeficientes ===")
+    print(f"💠 a = {a}")
+    print(f"💠 b = {b}\n")
     esperar()
 
     # -------------------------
     # RAIZ DA FUNÇÃO (PASSO 2)
     # -------------------------
-    print("=== Passo 2: Calcular a raiz da função ===")
-    print("Usamos a fórmula:  x = -b / a\n")
-    print(f"Substituindo os valores:")
-    print(f"x = -({b}) / {a}")
+    print("=== Passo 2️⃣ : Calcular a raiz da função ===")
+    print("🔶  Usamos a fórmula:  x = -b / a\n")
+    print(f"🔄️ Substituindo os valores:")
+    print(f"💠 x = -({b}) / {a}")
 
     raiz = -b / a
-    print(f"x = {raiz:.2f}  →  Esta é a raiz da função.\n")
+    print(f"❇️  x = {raiz:.2f}  ➡️  Esta é a raiz da função.\n")
     esperar()
 
     # -------------------------
     # CRESCENTE OU DECRESCENTE (PASSO 3)
     # -------------------------
-    print("=== Passo 3: Analisar o comportamento da função ===")
+    print("=== Passo 3️⃣ : Analisar o comportamento da função ===")
 
     if a > 0:
-        print("Como a > 0, a função é CRESCENTE.\n")
+        print("‼️  Como a > 0, a função é CRESCENTE.\n")
         comportamento = "Função crescente (a > 0)"
     else:
-        print("Como a < 0, a função é DECRESCENTE.\n")
+        print("‼️  Como a < 0, a função é DECRESCENTE.\n")
         comportamento = "Função decrescente (a < 0)"
     esperar()
 
     # -------------------------
     # CALCULAR f(x) (PASSO 4)
     # -------------------------
-    print("=== Passo 4: Calcular f(x) para um valor escolhido ===")
-    esperar("Quando estiver pronto para inserir o valor de x, pressione Enter...")
+    print("=== Passo 4️⃣ : Calcular f(x) para um valor escolhido ===")
+    esperar("🧑‍💻 Quando estiver pronto para inserir o valor de x, pressione Enter...")
 
     while True:
         try:
-            x_input = float(input("Digite um valor para x: "))
+            x_input = float(input("✍️  Digite um valor para x: "))
             break
         except ValueError:
-            print("Entrada inválida. Digite um número (por exemplo: 2 ou -3.5).")
+            print("❌ Entrada inválida. Digite um número (por exemplo: 2 ou -3.5).")
 
-    print("\nUsamos a fórmula f(x) = ax + b")
-    print(f"Substituindo: f({x_input}) = {a} * {x_input} + {b}")
+    print("\n🔶 Usamos a fórmula f(x) = ax + b")
+    print(f"🔄️ Substituindo: f({x_input}) = {a} * {x_input} + {b}")
 
     fx = a * x_input + b
-    print(f"Resultado: f({x_input}) = {fx:.2f}\n")
+    print(f"❇️  Resultado: f({x_input}) = {fx:.2f}\n")
     esperar()
 
     # -------------------------
     # GRÁFICO (PASSO 5)
     # -------------------------
-    print("=== Passo 5: Gerar o gráfico ===")
-    print("O gráfico mostrará:")
-    print("• A reta da função")
-    print("• O ponto onde ela corta o eixo X (raiz)")
-    print("• O ponto onde ela corta o eixo Y (b)\n")
+    print("=== Passo 5️⃣ : Gerar o gráfico ===")
+    print("📈 O gráfico mostrará:")
+    print("💠 A reta da função")
+    print("💠 O ponto onde ela corta o eixo X (raiz)")
+    print("💠 O ponto onde ela corta o eixo Y (b)\n")
     esperar()
 
     x = np.linspace(-10, 10, 100)

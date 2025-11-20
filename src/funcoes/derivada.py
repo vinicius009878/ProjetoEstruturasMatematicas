@@ -49,11 +49,7 @@ def le_numero(msg, tipo=float, permitir_neg=True):
             print(f"❌ Erro ao ler entrada: {e}")
 
 
-# ----------------------------------------------------------
-# DERIVADA DE 1º GRAU
-# ----------------------------------------------------------
-
-
+# Derivada de função de 1º grau
 def derivada_1grau(a, b):
     func = a * x + b
 
@@ -94,11 +90,7 @@ def derivada_1grau(a, b):
     print("=" * 70 + "\n")
 
 
-# ----------------------------------------------------------
-# DERIVADA DE POLINÔMIO
-# ----------------------------------------------------------
-
-
+# Derivada de polinômio
 def derivada_polinomial(a, exp_a, b, exp_b, c):
     func = a * x**exp_a + b * x**exp_b + c
 
@@ -158,9 +150,7 @@ def derivada_polinomial(a, exp_a, b, exp_b, c):
     print("=" * 70 + "\n")
 
 
-# ----------------------------------------------------------
 # Função principal usada no main
-# ----------------------------------------------------------
 
 
 def calcular_derivada(a, exp_a, b, exp_b, c):

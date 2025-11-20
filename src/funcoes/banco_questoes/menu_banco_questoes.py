@@ -1,7 +1,20 @@
+import sys
+import time
+
+
 from .questoes_primeiro_grau import questoes_primeiro_grau
 from .questoes_segundo_grau import questoes_segundo_grau
 from .questoes_vertice import questoes_vertice
 from .questoes_derivada import questoes_derivada
+
+
+# Função de texto animado (digitando)
+def escrever_animado(texto, delay=0.01):
+    for char in texto:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
 
 
 def menu_banco_questoes():
@@ -13,15 +26,15 @@ def menu_banco_questoes():
     }
 
     while True:
-        print("\n=======================================")
-        print("       📚  BANCO DE QUESTÕES  📚      ")
-        print("=======================================")
-        print("1️⃣  - Funções de 1º Grau")
-        print("2️⃣  - Funções de 2º Grau")
-        print("3️⃣  - Vértice")
-        print("4️⃣  - Derivadas")
-        print("0️⃣  - Voltar")
-        print("=======================================")
+        escrever_animado("\n=======================================")
+        escrever_animado("       📚  BANCO DE QUESTÕES  📚      ")
+        escrever_animado("=======================================")
+        escrever_animado("1️⃣  - Funções de 1º Grau")
+        escrever_animado("2️⃣  - Funções de 2º Grau")
+        escrever_animado("3️⃣  - Vértice")
+        escrever_animado("4️⃣  - Derivadas")
+        escrever_animado("0️⃣  - Voltar")
+        escrever_animado("=======================================")
 
         opc = input("💭 Escolha uma categoria: ")
 
@@ -29,16 +42,16 @@ def menu_banco_questoes():
             break
 
         if opc not in categorias:
-            print("\n❌ Opção inválida!")
+            escrever_animado("\n❌ Opção inválida!")
             continue
 
         titulo, lista = categorias[opc]
 
-        print(f"\n=== {titulo.upper()} ===")
+        escrever_animado(f"\n=== {titulo.upper()} ===")
 
         for i, q in enumerate(lista):
-            print(f"{i+1} - {q['titulo']}")
-        print("0 - Voltar")
+            escrever_animado(f"{i+1} - {q['titulo']}")
+        escrever_animado("0 - Voltar")
 
         esc_q = input("\n💭 Escolha a questão: ")
 
@@ -48,32 +61,32 @@ def menu_banco_questoes():
         try:
             questao = lista[int(esc_q) - 1]
         except:
-            print("\n❌ Questão inválida!")
+            escrever_animado("\n❌ Questão inválida!")
             continue
 
         exibir_questao(questao)
 
 
 def exibir_questao(questao):
-    print("\n=======================================")
-    print("      📘 ENUNCIADO DA QUESTÃO 📘      ")
-    print("=======================================\n")
-    print(questao["enunciado"])
+    escrever_animado("\n=======================================")
+    escrever_animado("      📘 ENUNCIADO DA QUESTÃO 📘      ")
+    escrever_animado("=======================================\n")
+    escrever_animado(questao["enunciado"])
 
     input("\nPressione ENTER para ver a resposta...")
 
-    print("\n📌 RESPOSTA:")
-    print(questao["resposta"])
+    escrever_animado("\n📌 RESPOSTA:")
+    escrever_animado(questao["resposta"])
 
     while True:
-        print("\n👀 Deseja ver o passo a passo?")
-        print("1️⃣  - Sim")
-        print("0️⃣  - Voltar")
+        escrever_animado("\n👀 Deseja ver o passo a passo?")
+        escrever_animado("1️⃣  - Sim")
+        escrever_animado("0️⃣  - Voltar")
         escolha = input("Escolha: ")
 
         if escolha == "1":
-            print("\n🧠 PASSO A PASSO:\n")
-            print(questao["passo_a_passo"])
+            escrever_animado("\n🧠 PASSO A PASSO:\n")
+            escrever_animado(questao["passo_a_passo"])
             input("\nPressione ENTER para voltar...")
             return
 
@@ -81,4 +94,4 @@ def exibir_questao(questao):
             return
 
         else:
-            print("❌ Opção inválida!")
+            escrever_animado("❌ Opção inválida!")

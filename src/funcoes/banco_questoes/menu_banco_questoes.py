@@ -14,16 +14,16 @@ def menu_banco_questoes():
 
     while True:
         print("\n=======================================")
-        print("           BANCO DE QUESTÕES           ")
+        print("       📚  BANCO DE QUESTÕES  📚      ")
         print("=======================================")
-        print("1 - Funções de 1º Grau")
-        print("2 - Funções de 2º Grau")
-        print("3 - Vértice")
-        print("4 - Derivadas")
-        print("0 - Voltar")
+        print("1️⃣  - Funções de 1º Grau")
+        print("2️⃣  - Funções de 2º Grau")
+        print("3️⃣  - Vértice")
+        print("4️⃣  - Derivadas")
+        print("0️⃣  - Voltar")
         print("=======================================")
 
-        opc = input("Escolha uma categoria: ")
+        opc = input("💭 Escolha uma categoria: ")
 
         if opc == "0":
             break
@@ -40,7 +40,7 @@ def menu_banco_questoes():
             print(f"{i+1} - {q['titulo']}")
         print("0 - Voltar")
 
-        esc_q = input("\nEscolha a questão: ")
+        esc_q = input("\n💭 Escolha a questão: ")
 
         if esc_q == "0":
             continue
@@ -56,7 +56,7 @@ def menu_banco_questoes():
 
 def exibir_questao(questao):
     print("\n=======================================")
-    print("📘 ENUNCIADO DA QUESTÃO")
+    print("      📘 ENUNCIADO DA QUESTÃO 📘      ")
     print("=======================================\n")
     print(questao["enunciado"])
 
@@ -66,9 +66,9 @@ def exibir_questao(questao):
     print(questao["resposta"])
 
     while True:
-        print("\nDeseja ver o passo a passo?")
-        print("1 - Sim")
-        print("0 - Voltar")
+        print("\n👀 Deseja ver o passo a passo?")
+        print("1️⃣  - Sim")
+        print("0️⃣  - Voltar")
         escolha = input("Escolha: ")
 
         if escolha == "1":

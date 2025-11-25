@@ -6,14 +6,16 @@
 O Projeto Estruturas Matemáticas tem como propósito desenvolver uma aplicação voltada ao estudo, implementação e manipulação de diferentes estruturas matemáticas. A ferramenta abrange o cálculo de funções de primeiro e segundo grau, derivadas e representações visuais. O projeto busca proporcionar uma experiência prática e intuitiva para a compreensão de conceitos matemáticos, utilizando recursos computacionais que facilitam o aprendizado e a aplicação desses conhecimentos em contextos de programação.
 </p>
 
-# 🚀 Tecnologias Utilizadas
+# 🚀 Príncipais Tecnologias Utilizadas
 🔧 Pré-requisitos
 Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
 - Python 3.12
-- numpy
-- syspy
-- matplotlib
+- Numpy
+- Sympy
+- Mpmath
+- Matplotlib
+- Kiwisolver
 
 # 📦 Configuração
 
